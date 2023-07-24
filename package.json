@@ -27,7 +27,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "env-cmd jest --config ./test/jest-e2e.json",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "fetch:leaderboard": "npm run build && node dist/scripts/fetch-leaderboard.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.332.0",
@@ -42,10 +43,12 @@
     "@nestjs/typeorm": "9.0.1",
     "@types/multer-s3": "^3.0.0",
     "apple-signin-auth": "1.7.5",
+    "axios": "^1.4.0",
     "bcryptjs": "2.4.3",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "fb": "2.0.0",
+    "fs": "^0.0.1-security",
     "google-auth-library": "8.8.0",
     "handlebars": "4.7.7",
     "multer": "1.4.4",
